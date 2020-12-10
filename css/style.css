@@ -1903,6 +1903,39 @@ button {
   border: none;
 }
 
+input[type="text"],
+.widget_search input[type="text"].searchform-s,
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="range"],
+input[type="password"],
+select {
+  height: 48px;
+  padding-left: 20px;
+  border: 1px solid #d4d4d4 !important;
+  border-radius: 3px;
+}
+
+input[type="text"]:focus,
+.widget_search input[type="text"].searchform-s:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="range"]:focus,
+input[type="password"]:focus,
+select:focus {
+  -webkit-box-shadow: inset 0px 0px 1px 0.5px #27B89382;
+          box-shadow: inset 0px 0px 1px 0.5px #27B89382;
+  border: 1px solid #27B89382 !important;
+}
+
 .btn {
   font-size: 13px;
   font-weight: 700;
@@ -2539,10 +2572,8 @@ section .subtitle {
   width: 100%;
   padding: 15px 20px;
   border: 1px solid #d4d4d4;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background: #fff;
   border-radius: 3px;
+  background: #fff;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
