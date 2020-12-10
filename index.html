@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/card.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/main.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/custom.css" type="text/css" media="all" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <div class="logo"><img src="img/logo-fr1.png"></div>
+        </div> 
+    </header>
+    <div class="bg-page">
+
+    </div>
+    
+    <div class="main">
+
+        <section class="moduloCheckout">
+            <div class="wrap">
+
+                <form id="checkout" method="POST" action='index.php' data-ajax='false'>
+                    <input type='hidden' name='page' value='assinar_cc'>
+                    <input type='hidden' name='origem' value='##ORIGEM##'>
+                    <input type='hidden' name='id_tipo_assinatura' value='##ID_TIPO_ASSINATURA##'>
+
+                    <div class="form-section">
+                        <h3 style="margin-top: 0; border-top: 0;">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 0C5.82028 0 0 5.82028 0 13C0 20.1797 5.82028 26 13 26C20.1797 26 26 20.1797 26 13C26 5.82028 20.1797 0 13 0ZM13 2.51613C18.794 2.51613 23.4839 7.20509 23.4839 13C23.4839 18.794 18.7949 23.4839 13 23.4839C7.20598 23.4839 2.51613 18.7949 2.51613 13C2.51613 7.20598 7.20509 2.51613 13 2.51613ZM20.3494 9.34464L19.1681 8.15378C18.9234 7.90714 18.5252 7.90552 18.2785 8.15021L10.8689 15.5002L7.73469 12.3406C7.49004 12.0939 7.09176 12.0923 6.84513 12.3369L5.65421 13.5183C5.40758 13.7629 5.40596 14.1612 5.65065 14.4079L10.4093 19.2051C10.654 19.4517 11.0523 19.4533 11.2989 19.2087L20.3459 10.2343C20.5925 9.98956 20.594 9.59127 20.3494 9.34464V9.34464Z" fill="#27B893"/>
+                            </svg>    
+                            Endereço de cobrança
+                        </h3>
+                        <div class="erro" style="width: 100%; height: 18px; color: red">##MSG_ERRO##</div>
+                        <div class="form-input form-cep">
+                            <label for="cep">Cep*</label>
+                            <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" placeholder="xxxxx-xxx">
+                        </div>
+                        <div class="form-input form-estado">
+                            <label for="uf">Estado*</label>
+                            <input name="uf" readonly='readonly' type="text" id="uf" size="2">
+                        </div>
+                        <div class="form-input form-cidade">
+                            <label for="cidade">Cidade*</label>
+                            <input name="cidade" readonly='readonly' type="text" id="cidade"
+                            size="40">
+                        </div>
+                        <div class="form-input form-rua">
+                            <label for="rua">Rua*</label>
+                            <input name="rua" type="text" id="rua" size="60">
+                        </div>
+                        <div class="form-input form-numero">
+                            <label for="numero">Numero*</label>
+                            <input name="numero" type="number" id="numero" min="0" max="999999"
+                            maxlength="6" size="40">
+                        </div>
+                        <div class="form-input form-comp">
+                            <label for="complemento">Complemento</label>
+                            <input name="complemento" type="text" id="complemento" size="60">
+                        </div>
+                        <div class="form-input form-cpf">
+                            <label for="cpf">CPF*</label>
+                            <input name="cpf" id="cpf" maxlength="15" type="text" placeholder="___.___.___-__" required >
+                        </div>
+                        <div class="form-input form-celular">
+                            <label for="telefone">Celular*</label>
+                            <input id="telefone" name="telefone" placeholder="DDD+NUMERO"
+                            maxlength="11" type="text">
+                        </div>
+                        <div class="form-input form-email">
+                            <label for="email">Email*</label>
+                            <input id="email" name="email" maxlength="50" type="text">
+                        </div>
+                        <div class="form-input form-email">
+                            <label for="email-confirm">Confirme seu email*</label>
+                            <input id="email-confirm" name="email-confirm" maxlength="50" type="text">
+                        </div>
+
+                        <h3>
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 0C5.82028 0 0 5.82028 0 13C0 20.1797 5.82028 26 13 26C20.1797 26 26 20.1797 26 13C26 5.82028 20.1797 0 13 0ZM13 2.51613C18.794 2.51613 23.4839 7.20509 23.4839 13C23.4839 18.794 18.7949 23.4839 13 23.4839C7.20598 23.4839 2.51613 18.7949 2.51613 13C2.51613 7.20598 7.20509 2.51613 13 2.51613ZM20.3494 9.34464L19.1681 8.15378C18.9234 7.90714 18.5252 7.90552 18.2785 8.15021L10.8689 15.5002L7.73469 12.3406C7.49004 12.0939 7.09176 12.0923 6.84513 12.3369L5.65421 13.5183C5.40758 13.7629 5.40596 14.1612 5.65065 14.4079L10.4093 19.2051C10.654 19.4517 11.0523 19.4533 11.2989 19.2087L20.3459 10.2343C20.5925 9.98956 20.594 9.59127 20.3494 9.34464V9.34464Z" fill="#27B893"/>
+                            </svg>
+                            Informações de Pagamento
+                        </h3>
+                        
+                        <div class="container-flip preload">
+                            <div class="creditcard">
+                                <div class="front">
+                                    <div id="ccsingle"></div>
+                                    <svg version="1.1" id="cardfront" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;"
+                                        xml:space="preserve">
+                                        
+                                        <defs>
+                                            <filter id="f1" x="0" y="0">
+                                                <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+                                            </filter>
+                                        </defs>
+                                        <g id="Front">
+                                            <g id="CardBackground" class="cardBackground">
+                                                <g id="Page-1_1_">
+                                                    <g id="amex_1_">
+                                                        <path id="Rectangle-1_1_" class="lightcolor grey" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
+                                            C0,17.9,17.9,0,40,0z" />
+                                                    </g>
+                                                </g>
+                                                <path class="darkcolor greydark"
+                                                    d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
+                                            </g>
+                                            <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber"
+                                                class="st2 st3 st4"></text>
+                                            <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname"
+                                                class="st2 st5 st6"></text>
+                                            <text transform="matrix(1 0 0 1 54.1074 389.8793)"
+                                                class="st7 st5 st8">Nome impresso no cartão</text>
+                                            <text transform="matrix(1 0 0 1 479.7754 388.8793)"
+                                                class="st7 st5 st8">Validade</text>
+                                            <text transform="matrix(1 0 0 1 65.1054 241.5)"
+                                                class="st7 st5 st8">Número do Cartão</text>
+                                            <g>
+                                                <text transform="matrix(1 0 0 1 574.4219 433.8095)"
+                                                    id="svgexpire" class="st2 st5 st9"></text>
+                                                <text transform="matrix(1 0 0 1 479.3848 417.0097)"
+                                                    class="st2 st10 st11">VALID</text>
+                                                <text transform="matrix(1 0 0 1 479.3848 435.6762)"
+                                                    class="st2 st10 st11">THRU</text>
+                                                <polygon class="st2"
+                                                    points="554.5,421 540.4,414.2 540.4,427.9    " />
+                                            </g>
+                                            <g id="cchip">
+                                                <g>
+                                                    <path class="st2"
+                                                        d="M168.1,143.6H82.9c-10.2,0-18.5-8.3-18.5-18.5V74.9c0-10.2,8.3-18.5,18.5-18.5h85.3
+                                        c10.2,0,18.5,8.3,18.5,18.5v50.2C186.6,135.3,178.3,143.6,168.1,143.6z" />
+                                                </g>
+                                                <g>
+                                                    <g>
+                                                        <rect x="82" y="70" class="st12" width="1.5"
+                                                            height="60" />
+                                                    </g>
+                                                    <g>
+                                                        <rect x="167.4" y="70" class="st12" width="1.5"
+                                                            height="60" />
+                                                    </g>
+                                                    <g>
+                                                        <path class="st12" d="M125.5,130.8c-10.2,0-18.5-8.3-18.5-18.5c0-4.6,1.7-8.9,4.7-12.3c-3-3.4-4.7-7.7-4.7-12.3
+                                            c0-10.2,8.3-18.5,18.5-18.5s18.5,8.3,18.5,18.5c0,4.6-1.7,8.9-4.7,12.3c3,3.4,4.7,7.7,4.7,12.3
+                                            C143.9,122.5,135.7,130.8,125.5,130.8z M125.5,70.8c-9.3,0-16.9,7.6-16.9,16.9c0,4.4,1.7,8.6,4.8,11.8l0.5,0.5l-0.5,0.5
+                                            c-3.1,3.2-4.8,7.4-4.8,11.8c0,9.3,7.6,16.9,16.9,16.9s16.9-7.6,16.9-16.9c0-4.4-1.7-8.6-4.8-11.8l-0.5-0.5l0.5-0.5
+                                            c3.1-3.2,4.8-7.4,4.8-11.8C142.4,78.4,134.8,70.8,125.5,70.8z" />
+                                                    </g>
+                                                    <g>
+                                                        <rect x="82.8" y="82.1" class="st12" width="25.8"
+                                                            height="1.5" />
+                                                    </g>
+                                                    <g>
+                                                        <rect x="82.8" y="117.9" class="st12" width="26.1"
+                                                            height="1.5" />
+                                                    </g>
+                                                    <g>
+                                                        <rect x="142.4" y="82.1" class="st12" width="25.8"
+                                                            height="1.5" />
+                                                    </g>
+                                                    <g>
+                                                        <rect x="142" y="117.9" class="st12" width="26.2"
+                                                            height="1.5" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                        <g id="Back">
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="back">
+                                    <svg version="1.1" id="cardback" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;"
+                                        xml:space="preserve">
+                                        <g id="Front">
+                                            <line class="st0" x1="35.3" y1="10.4" x2="36.7" y2="11" />
+                                        </g>
+                                        <g id="Back">
+                                            <g id="Page-1_2_">
+                                                <g id="amex_2_">
+                                                    <path id="Rectangle-1_2_" class="darkcolor greydark" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
+                                        C0,17.9,17.9,0,40,0z" />
+                                                </g>
+                                            </g>
+                                            <rect y="61.6" class="st2" width="750" height="78" />
+                                            <g>
+                                                <path class="st3" d="M701.1,249.1H48.9c-3.3,0-6-2.7-6-6v-52.5c0-3.3,2.7-6,6-6h652.1c3.3,0,6,2.7,6,6v52.5
+                                    C707.1,246.4,704.4,249.1,701.1,249.1z" />
+                                                <rect x="42.9" y="198.6" class="st4" width="664.1"
+                                                    height="10.5" />
+                                                <rect x="42.9" y="224.5" class="st4" width="664.1"
+                                                    height="10.5" />
+                                                <path class="st5"
+                                                    d="M701.1,184.6H618h-8h-10v64.5h10h8h83.1c3.3,0,6-2.7,6-6v-52.5C707.1,187.3,704.4,184.6,701.1,184.6z" />
+                                            </g>
+                                            <text transform="matrix(1 0 0 1 621.999 227.2734)"
+                                                id="svgsecurity" class="st6 st7"></text>
+                                            <g class="st8">
+                                                <text transform="matrix(1 0 0 1 518.083 280.0879)"
+                                                    class="st9 st6 st10">CVV</text>
+                                            </g>
+                                            <rect x="58.1" y="378.6" class="st11" width="375.5"
+                                                height="13.5" />
+                                            <rect x="58.1" y="405.6" class="st11" width="421.7"
+                                                height="13.5" />
+                                            <text transform="matrix(1 0 0 1 59.5073 228.6099)"
+                                                id="svgnameback" class="st12 st13"></text>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-cont">
+                            <div class="form-input form-nome-cartao">
+                                <label for="holdername_c">Nome no cartão*</label>
+                                <input onkeyup="value=value.replace(/[^a-zA-Z	 ]/g,'')" name="holdername_c"
+                                id="holdername_c" maxlength="20" type="text" required placeholder="Nome impresso no cartão">
+                            </div>
+                            <div class="form-input form-numero-cartao">
+                                <label for="number_c">Número do Cartão*</label>
+                                <span id="generatecard"
+                                style="display:none">generate random</span>
+                                <input name="number_c" id="number_c" type="text">
+                                <svg id="ccicon" class="ccicon" width="750" height="471"
+                                    viewBox="0 0 750 471" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                </svg>
+                            </div>
+                            <div class="form-input form-validade">
+                                <label for="exp_c">Validade*</label>
+                                <input id="exp_c" name="exp_c" type="text">
+                            </div>
+                            <div class="form-input form-cvv">
+                                <label for="cvv_c">CVV*</label>
+                                <input id="cvv_c" name="cvv_c" type="text" pattern="[0-9]*"
+                                inputmode="numeric">
+                            </div>
+                            
+                            <div class="col-md-12" style="display: none;">
+                                <div class="field-container" style="margin-top:20px;">
+                                    <input id="plano-anual" placeholder="Plano Anual" readonly=""
+                                        maxlength="20" type="text">
+                                </div>
+                            </div>
+                            <div class="form-input form-parcelas">
+                                <label>Parcelas*</label>
+                                <select name="installments" id="installments"
+                                                style="border:none; margin: 0;width: 100%;">
+                                    <option value="1">Plano anual a vista R$59,90 - 28% desconto
+                                    </option>
+                                    <option value="12">Plano anual 12x de R$6,90</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-cont-btn">
+                            <a href="#" class="btn btn-planos" onClick="return submitIt()">
+                                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="shield-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-shield-check fa-w-16 fa-9x"><path fill="currentColor" d="M163.2 230.5c-4.7-4.7-12.3-4.7-17-.1l-22.7 22.5c-4.7 4.7-4.7 12.3-.1 17l90.8 91.5c4.7 4.7 12.3 4.7 17 .1l172.6-171.2c4.7-4.7 4.7-12.3.1-17l-22.5-22.7c-4.7-4.7-12.3-4.7-17-.1L223 290.7zM466.5 83.7l-192-80a48.15 48.15 0 0 0-36.9 0l-192 80C27.7 91.1 16 108.6 16 128c0 198.5 114.5 335.7 221.5 380.3 11.8 4.9 25.1 4.9 36.9 0C360.1 472.6 496 349.3 496 128c0-19.4-11.7-36.9-29.5-44.3zM256 464C158.5 423.4 64 297.3 64 128l192-80 192 80c0 173.8-98.4 297-192 336z" class=""></path></svg>
+                                CONFIRMAR PEDIDO
+                            </a>
+                        </div>
+                        
+                    </div>
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <footer>
+
+        <div class="footer-container">
+            <div class="wrap grid">
+                <div class="col100 first-sec">
+                    <div class="text-box">
+                        <h2>Compartilhe com um amigo</h2>
+                    </div>
+                    
+                    <div class="form-box">
+
+                        <a href="javascript:void(0)" class="btn modalcta">
+                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.6345 8.66446L20.6344 15.3043C19.8965 16.0043 18.6667 15.4854 18.6667 14.4524V10.9386C11.6387 10.9859 8.67388 12.6531 10.6568 19.3054C10.8747 20.0365 10.0323 20.6026 9.4412 20.1516C7.54697 18.7063 5.83333 15.9418 5.83333 13.1513C5.83333 6.12315 11.55 4.72848 18.6667 4.68883V1.17247C18.6667 0.138585 19.8974 -0.3787 20.6344 0.320519L27.6345 6.96055C28.1216 7.42261 28.122 8.20201 27.6345 8.66446ZM18.6667 18.5121V21.875H3.11111V6.25001H5.58619C5.66475 6.24996 5.74248 6.23396 5.81472 6.20297C5.88697 6.17198 5.95223 6.12665 6.00658 6.06969C6.73347 5.30953 7.57366 4.70787 8.48643 4.23004C9.02747 3.94679 8.827 3.12501 8.21688 3.12501H2.33333C1.04465 3.12501 0 4.17433 0 5.46876V22.6562C0 23.9507 1.04465 25 2.33333 25H19.4444C20.7331 25 21.7778 23.9507 21.7778 22.6562V18.32C21.7778 17.9153 21.3793 17.6332 20.9995 17.7682C20.4669 17.9574 19.8966 18.0139 19.3375 17.9331C18.9841 17.882 18.6667 18.1535 18.6667 18.5121Z" fill="white"/>
+                            </svg>
+                            Compartilhe
+                        </a>
+                        
+                        <div id="modalSample" class="modalBox">
+                            <div class="modal-container">
+                                <div class="wrap">
+                                    <h3>Compartilhar:</h3>
+                                    <div class="socials">
+                                        <a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share" class="whats">
+                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="24" cy="24" r="24" fill="#8BDA4D"/>
+                                                <path d="M32.4054 15.4875C30.1607 13.2375 27.1714 12 23.9946 12C17.4375 12 12.1018 17.3357 12.1018 23.8929C12.1018 25.9875 12.6482 28.0339 13.6875 29.8393L12 36L18.3054 34.3446C20.0411 35.2929 21.9964 35.7911 23.9893 35.7911H23.9946C30.5464 35.7911 36 30.4554 36 23.8982C36 20.7214 34.65 17.7375 32.4054 15.4875V15.4875ZM23.9946 33.7875C22.2161 33.7875 20.475 33.3107 18.9589 32.4107L18.6 32.1964L14.8607 33.1768L15.8571 29.5286L15.6214 29.1536C14.6304 27.5786 14.1107 25.7625 14.1107 23.8929C14.1107 18.4446 18.5464 14.0089 24 14.0089C26.6411 14.0089 29.1214 15.0375 30.9857 16.9071C32.85 18.7768 33.9964 21.2571 33.9911 23.8982C33.9911 29.3518 29.4429 33.7875 23.9946 33.7875V33.7875ZM29.4161 26.3839C29.1214 26.2339 27.6589 25.5161 27.3857 25.4196C27.1125 25.3179 26.9143 25.2696 26.7161 25.5696C26.5179 25.8696 25.95 26.5339 25.7732 26.7375C25.6018 26.9357 25.425 26.9625 25.1304 26.8125C23.3839 25.9393 22.2375 25.2536 21.0857 23.2768C20.7804 22.7518 21.3911 22.7893 21.9589 21.6536C22.0554 21.4554 22.0071 21.2839 21.9321 21.1339C21.8571 20.9839 21.2625 19.5214 21.0161 18.9268C20.775 18.3482 20.5286 18.4286 20.3464 18.4179C20.175 18.4071 19.9768 18.4071 19.7786 18.4071C19.5804 18.4071 19.2589 18.4821 18.9857 18.7768C18.7125 19.0768 17.9464 19.7946 17.9464 21.2571C17.9464 22.7196 19.0125 24.1339 19.1571 24.3321C19.3071 24.5304 21.2518 27.5304 24.2357 28.8214C26.1214 29.6357 26.8607 29.7054 27.8036 29.5661C28.3768 29.4804 29.5607 28.8482 29.8071 28.1518C30.0536 27.4554 30.0536 26.8607 29.9786 26.7375C29.9089 26.6036 29.7107 26.5286 29.4161 26.3839Z" fill="white"/>
+                                                </svg>  
+                                        </a>
+                                        <a  href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="#" data-show-count="false">
+                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="24" cy="24" r="24" fill="#49C9F1"/>
+                                                <path d="M36.1219 19.4828C36.1397 19.7234 36.1397 19.9641 36.1397 20.2047C36.1397 27.5437 30.3656 36 19.8122 36C16.5609 36 13.5406 35.089 11 33.5078C11.4619 33.5594 11.9061 33.5766 12.3858 33.5766C15.0685 33.5766 17.5381 32.7 19.5102 31.2047C16.9873 31.1531 14.8731 29.5547 14.1447 27.3547C14.5 27.4062 14.8553 27.4406 15.2285 27.4406C15.7437 27.4406 16.2589 27.3718 16.7386 27.2516C14.1092 26.7359 12.137 24.5016 12.137 21.8031V21.7344C12.9009 22.1469 13.7893 22.4047 14.7309 22.439C13.1852 21.4421 12.1726 19.7406 12.1726 17.8156C12.1726 16.7844 12.4568 15.839 12.9543 15.014C15.7792 18.3828 20.0254 20.5827 24.7868 20.8234C24.698 20.4109 24.6446 19.9813 24.6446 19.5516C24.6446 16.4922 27.203 14 30.3832 14C32.0355 14 33.5279 14.6703 34.5761 15.7531C35.8731 15.5125 37.1167 15.0484 38.2183 14.4125C37.7918 15.7016 36.8858 16.7844 35.6954 17.4719C36.8503 17.3516 37.9696 17.0422 39 16.6125C38.2184 17.7125 37.2412 18.6921 36.1219 19.4828V19.4828Z" fill="white"/>
+                                                </svg> 
+                                        </a>
+                                        <a href="#">
+                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="24" cy="24" r="24" fill="#486EF3"/>
+                                                <path d="M30.9515 26.875L31.7812 21.4457H26.5935V17.9225C26.5935 16.4371 27.3182 14.9893 29.6416 14.9893H32V10.3668C32 10.3668 29.8598 10 27.8136 10C23.5414 10 20.7489 12.6004 20.7489 17.3078V21.4457H16V26.875H20.7489V40H26.5935V26.875H30.9515Z" fill="white"/>
+                                                </svg>
+                                                   
+                                        </a>
+                                        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site #.">
+                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="24" cy="24" r="24" fill="#C4C4C4"/>
+                                                <path d="M34.5625 15H13.4375C12.0913 15 11 16.0073 11 17.25V30.75C11 31.9927 12.0913 33 13.4375 33H34.5625C35.9087 33 37 31.9927 37 30.75V17.25C37 16.0073 35.9087 15 34.5625 15ZM34.5625 17.25V19.1627C33.4239 20.0186 31.6087 21.3495 27.728 24.1545C26.8728 24.7754 25.1787 26.2672 24 26.2498C22.8215 26.2674 21.1268 24.7752 20.272 24.1545C16.392 21.3499 14.5763 20.0188 13.4375 19.1627V17.25H34.5625ZM13.4375 30.75V22.0499C14.6011 22.9054 16.2512 24.1059 18.7664 25.9239C19.8763 26.7304 21.8201 28.5108 24 28.5C26.1692 28.5108 28.0883 26.7563 29.2332 25.9243C31.7483 24.1064 33.3988 22.9055 34.5625 22.05V30.75H13.4375Z" fill="white"/>
+                                            </svg>    
+                                        </a>
+                                    </div>
+
+                                    <div class="copy-link-box">
+                                        <span id="foo" value="Link do Site">Link do Site</span>
+                                        <button class="btn btn-copy" data-clipboard-target="#foo">Copiar</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div id="inv-modal" class="inv-modal modalcta"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="col100 second-sec">
+                    <div class="text-box">
+                        <h5>Contatos:</h5>
+                        <p>Para dúvidas ou problemas sobre pagamento e cancelamento: 
+                            <br>suporte@gulftech.com.br
+                        </p>
+                        <p>Para entrar em contato com os produtores do curso:
+                            <br>suporte@gulftech.academy
+                        </p>
+                    </div>
+                    <div class="form-box">
+                        <div class="selos-box grid">
+                            <div class="col50">
+                                <span>Formas de pagamento:</span>
+                                <ul class="selos">
+                                    <li><img src="./img/bandeiras.png"></li>
+                                </ul>
+                            </div>
+                            <div class="col50">
+                                <span>Compre com segurança</span>
+                                
+                                <ul class="selos">
+                                    <li><img src="./img/selo-blindado.png"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="copy-box">
+            <div class="wrap">
+                <p>Growth Leaders Academy © Copyright 2020 - Todos os direitos reservados.</p>
+
+                <ul>
+                    <li><a href="termos_e_politicas.html">Politica de Privacidade</a></li>
+                    <li><a href="termos_e_politicas.html">Termos e Condições</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+    <script type="text/javascript">
+        $(document).ready(function($){
+            $("#cep").blur(function() {
+                var cep = $(this).val().replace(/\D/g, "");
+                if (cep != "") {
+                    var validacep = /^[0-9]{8}$/;
+                    if(validacep.test(cep)) {
+                        $("#rua").val("...");
+                        $("#cidade").val("...");
+                        $("#uf").val("...");
+                        $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+                            if (!("erro" in dados)) {
+                                $("#rua").val(dados.logradouro);
+                                $("#cidade").val(dados.localidade);
+                                $("#uf").val(dados.uf);
+                            }else{
+                                limpa_formulario_cep();
+                                alert("CEP não encontrado.");
+                            }
+                        });
+                    }else{
+                        limpa_formulario_cep();
+                        alert("Formato de CEP inválido.");
+                    }
+                }else {
+                    limpa_formulario_cep();
+                }
+            });
+            jQuery("#telefone").keyup(function () { 
+                this.value = this.value.replace(/[^0-9\.]/g,"");
+            });
+            if($('.erro').html() != ""){
+                const element = document.getElementById("moveaqui")
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+            $("#cpf").mask("999.999.999-99");
+    
+            function limpa_formulario_cep() {
+                $("#rua").val("");
+                $("#cidade").val("");
+                $("#uf").val("");
+                $("#ibge").val("");
+            }
+        });
+    
+        var desconto=0;
+        const items = document.querySelectorAll(".accordion a");
+        function mostraInicio(){
+            $('.firstPage').css("display", "block");
+            $('.secondPage').css("display", "none");
+        }
+        function mostraCartao(){
+            $('.firstPage').css("display", "none");
+            $('.secondPage').css("display", "block");
+        }
+        function toggleAccordion(){
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("active");
+        }
+        items.forEach(item => item.addEventListener("click", toggleAccordion));
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+        function submitIt() {  
+            $(".btn-planos").attr("disabled",true);      
+            $(".erro").html("");
+            if($("#email").val() != "" && $("#email-confirm").val() != "" && $("#holdername_c").val() != "" && $("#exp_c").val() != "" && $("#number_c").val() != "" && $("#cvv_c").val() != "" && $("#numero").val() != "" && $("#cep").val() != "" && $("#rua").val() != "" && $("#cidade").val() != "" && $("#uf").val() != "" && $("#telefone").val() != ""  ){
+                if(validateEmail($("#email").val())){
+                    if($("#email").val() != $("#email-confirm").val()){
+                        $(".erro").html("Email diferente nos 2 campos");
+                        $(".btn-planos").removeAttr("disabled");
+                        return false;
+                    }else if($("#telefone").val().length != 11){
+                        $(".erro").html("Celular Incorreto");
+                        $(".btn-planos").removeAttr("disabled");
+                        return false;               
+                    }else{
+                        $("#checkout").submit();
+                    }
+                }else{
+                    $(".erro").html("Email inv&aacute;lido");
+                    $(".btn-planos").removeAttr("disabled");
+                    return false;
+                }
+            }else{
+                $(".erro").html("Por favor, preencha todos os campos.");
+                $(".btn-planos").removeAttr("disabled");
+                return false;
+            }
+        }
+    </script>
+
+    <script src="js/card.js"></script>
+    <script src="js/card_imask.min.js"></script>
+    <script src="js/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
+
+    <script src="js/clipboard.min.js"></script> <!-- https://clipboardjs.com -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.footer .accent-bg-mixin,
+.accent-gradient .footer .accent-bg-mixin {
+  background: #fcfcfc;
+}
+#myModal {
+  font:  normal  18px / 24px "Noto Sans", Helvetica, Arial, Verdana, sans-serif;
+  word-spacing: normal;
+  color: #131418;
+}
+#myModal .wf-wrap,
+.page-title .wf-wrap,
+.fancy-header .wf-wrap {
+  padding: 0 50px 0 50px;
+}
+
+#myModal h4 {
+  color: #131418;
+  font:  normal bold 20px / 30px "Roboto", Helvetica, Arial, Verdana, sans-serif;
+  text-transform: none;
+}
+
+#myModal h5 {
+  color: #131418;
+  font:  normal bold 14px / 24px "Roboto", Helvetica, Arial, Verdana, sans-serif;
+  text-transform: none;
+}
+
+#myModal select {
+  color: #8b8d94;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  padding: 5px 15px 5px 15px;
+  border-color: rgba(51,51,51,0.11);
+  background-color: #fdfdfd;
+  border-radius: 2px;
+  font-size: 15px;
+  line-height: 27px;
+  height: 40px;
+}
+
+input[type="text"],
+.widget_search input[type="text"].searchform-s,
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="range"],
+input[type="password"],
+select,
+.wpcf7-number,
+.tinvwl-input-group .form-control,
+.woocommerce div.elementor .the7-elementor-widget form.cart table.variations td.value select {
+  height: 40px;
+}
+
+#myModal select:not(.elementor-field) {
+  -webkit-appearance: none !important;
+  -moz-appearance: none;
+  
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="rgba(139,141,148,0.5)" x="0px" y="0px" width="8px" height="8px" viewBox="0 0 386.257 386.257" style="enable-background:new 0 0 386.257 386.257;" xml:space="preserve"><polygon points="0,96.879 193.129,289.379 386.257,96.879 "/></svg>');
+  background-position: calc(100% - 10px) center;
+  background-repeat: no-repeat;
+  padding-right: calc(15px + 15px);
+}
+
+
