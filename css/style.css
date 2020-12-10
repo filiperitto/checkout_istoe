@@ -2260,6 +2260,7 @@ body {
 header {
   width: 100%;
   height: auto;
+  position: fixed;
   padding: 1em 0;
   z-index: 99;
   -webkit-transition: all 300ms ease-in-out;
@@ -2410,6 +2411,10 @@ section .subtitle {
   border-bottom: 1px solid #27b8947e;
 }
 
+.main {
+  padding-top: 73px;
+}
+
 .moduloCheckout {
   padding: 0;
   margin-top: -260px;
@@ -2455,6 +2460,7 @@ section .subtitle {
   -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   padding: 0 10px;
+  border-radius: 3px;
 }
 
 .moduloCheckout .form-section .form-cont {
