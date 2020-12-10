@@ -2499,6 +2499,12 @@ section .subtitle {
   top: auto;
 }
 
+@media only screen and (min-width: 1000px) {
+  .moduloCheckout .form-section .form-input .ccicon {
+    bottom: 34px;
+  }
+}
+
 .moduloCheckout .form-section .form-input label {
   width: 100%;
   display: block;
@@ -2545,9 +2551,9 @@ section .subtitle {
 }
 
 .moduloCheckout .form-section .form-input input:focus {
-  -webkit-box-shadow: inset 0px 0px 1px 0.5px #ff572282;
-          box-shadow: inset 0px 0px 1px 0.5px #ff572282;
-  border: 1px solid #ff572282 !important;
+  -webkit-box-shadow: inset 0px 0px 1px 0.5px #27B89382;
+          box-shadow: inset 0px 0px 1px 0.5px #27B89382;
+  border: 1px solid #27B89382 !important;
 }
 
 .moduloCheckout .form-section .form-input.form-cep {

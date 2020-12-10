@@ -485,6 +485,9 @@ section {
                 bottom: 27px;
                 opacity: 0.6;
                 top: auto;
+                @include respond-to-min(1000){
+                    bottom: 34px;
+                }
             }
             label{
                 width: 100%;
@@ -518,8 +521,8 @@ section {
                     color: #90A4AF;
                 }
                 &:focus{
-                    box-shadow: inset 0px 0px 1px 0.5px #ff572282;
-                    border: 1px solid #ff572282 !important;
+                    box-shadow: inset 0px 0px 1px 0.5px #27B89382;
+                    border: 1px solid #27B89382 !important;
                 }
             }
             &.form-cep{
