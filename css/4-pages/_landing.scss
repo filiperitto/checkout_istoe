@@ -405,6 +405,22 @@ section {
     }
     form{
     }
+    .erro{
+        width: 100%;
+        display: none;
+        color: red;
+        width: 100%;
+        height: auto;
+        color: #ff3e3e;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        background: #f9c6da;
+        &.show{
+            display: block;
+        }
+
+    }
     .form-section{
         width: calc(100%);
         background: #fff;

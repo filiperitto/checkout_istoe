@@ -42,7 +42,7 @@
                             </svg>    
                             Endereço de cobrança
                         </h3>
-                        <div class="erro" style="width: 100%; height: 18px; color: red">##MSG_ERRO##</div>
+                        <div class="erro">##MSG_ERRO##</div>
                         <div class="form-input form-cep">
                             <label for="cep">Cep*</label>
                             <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" placeholder="xxxxx-xxx">
@@ -385,7 +385,7 @@
 
         <div class="copy-box">
             <div class="wrap">
-                <p>Growth Leaders Academy © Copyright 2020 - Todos os direitos reservados.</p>
+                <p>Gulf Tech © Copyright 2020 - Todos os direitos reservados.</p>
 
                 <ul>
                     <li><a href="termos_e_politicas.html">Politica de Privacidade</a></li>
@@ -467,10 +467,12 @@
                 if(validateEmail($("#email").val())){
                     if($("#email").val() != $("#email-confirm").val()){
                         $(".erro").html("Email diferente nos 2 campos");
+                        $('.erro').toggleClass("show");
                         $(".btn-planos").removeAttr("disabled");
                         return false;
                     }else if($("#telefone").val().length != 11){
                         $(".erro").html("Celular Incorreto");
+                        $('.erro').toggleClass("show");
                         $(".btn-planos").removeAttr("disabled");
                         return false;               
                     }else{
@@ -478,11 +480,13 @@
                     }
                 }else{
                     $(".erro").html("Email inv&aacute;lido");
+                    $('.erro').toggleClass("show");
                     $(".btn-planos").removeAttr("disabled");
                     return false;
                 }
             }else{
                 $(".erro").html("Por favor, preencha todos os campos.");
+                $('.erro').toggleClass("show");
                 $(".btn-planos").removeAttr("disabled");
                 return false;
             }
