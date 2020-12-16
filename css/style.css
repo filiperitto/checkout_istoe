@@ -2405,10 +2405,19 @@ section .subtitle {
 
 .bg-page {
   width: 100%;
-  height: 280px;
-  background: url(../img/bg-divider.png) repeat-x;
+  height: 480px;
+  background: url(../imgs/bg-divider.png) repeat;
   background-color: #27b89433;
   border-bottom: 1px solid #27b8947e;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (min-width: 750px) {
+  .bg-page {
+    opacity: 1;
+  }
 }
 
 .main {
@@ -2417,19 +2426,265 @@ section .subtitle {
 
 .moduloCheckout {
   padding: 0;
-  margin-top: -260px;
+  margin-top: 30px;
   margin-bottom: 50px;
 }
 
 @media only screen and (min-width: 1100px) {
   .moduloCheckout {
-    margin-top: -240px;
+    margin-top: 40px;
   }
 }
 
 .moduloCheckout .wrap {
   max-width: 1100px;
   padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+@media only screen and (min-width: 750px) {
+  .moduloCheckout .wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 750px) {
+  .moduloCheckout .resumo-box .card-section .produto-box {
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    padding: 0 10px;
+  }
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .thumb-img {
+  width: 130px;
+  height: 130px;
+  background: #ededed;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 3px;
+}
+
+@media only screen and (min-width: 750px) {
+  .moduloCheckout .resumo-box .card-section .produto-box .thumb-img {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .thumb-img img {
+  width: 100%;
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 10px;
+}
+
+@media only screen and (min-width: 750px) {
+  .moduloCheckout .resumo-box .card-section .produto-box .info-box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-left: 20px;
+    height: 100%;
+  }
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos {
+  width: 100%;
+}
+
+@media only screen and (min-width: 750px) {
+  .moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos .names-info {
+    margin-right: 15px;
+  }
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos .names-info h4 {
+  margin: 0;
+  padding: 0;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 2px;
+  /* identical to box height */
+  color: #000000;
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos .names-info h5 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.015em;
+  color: #838485;
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos .tag {
+  background: #FCD281;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #000000;
+}
+
+@media only screen and (min-width: 750px) {
+  .moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos .tag {
+    margin-right: 15px;
+  }
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos .avaliacao {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos .avaliacao ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos .avaliacao ul li {
+  margin-right: 3px;
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos .avaliacao ul li:last-child {
+  margin-right: 0;
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .header-infos .avaliacao span {
+  margin-top: 3px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+  letter-spacing: -0.015em;
+  color: #000000;
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .cont-intro {
+  display: none;
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .cont-intro p {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.015em;
+  opacity: 1;
+  padding: 0 10px 0 0;
+  color: #000000;
+}
+
+@media only screen and (min-width: 750px) {
+  .moduloCheckout .resumo-box .card-section .produto-box .info-box .infos .cont-intro {
+    display: block;
+  }
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .prices-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 750px) {
+  .moduloCheckout .resumo-box .card-section .produto-box .info-box .prices-box {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .prices-box .real-price {
+  margin-right: 5px;
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .prices-box .real-price span {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: -0.015em;
+  color: #000000;
+}
+
+.moduloCheckout .resumo-box .card-section .produto-box .info-box .prices-box .desc-price span {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+  letter-spacing: -0.015em;
+  color: #727272;
 }
 
 .moduloCheckout .erro {
@@ -2449,7 +2704,7 @@ section .subtitle {
   display: block;
 }
 
-.moduloCheckout .form-section {
+.moduloCheckout .card-section {
   width: calc(100%);
   background: #fff;
   display: -webkit-box;
@@ -2461,9 +2716,10 @@ section .subtitle {
           box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   padding: 0 10px;
   border-radius: 3px;
+  margin-bottom: 30px;
 }
 
-.moduloCheckout .form-section .form-cont {
+.moduloCheckout .card-section .form-cont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2471,38 +2727,38 @@ section .subtitle {
       flex-wrap: wrap;
 }
 
-.moduloCheckout .form-section .container-flip {
+.moduloCheckout .card-section .container-flip {
   width: 100%;
   padding: 10px;
   height: 59vw;
 }
 
 @media only screen and (min-width: 1000px) {
-  .moduloCheckout .form-section .container-flip {
+  .moduloCheckout .card-section .container-flip {
     width: 50%;
   }
 }
 
-.moduloCheckout .form-section .container-flip svg#cardfront, .moduloCheckout .form-section .container-flip svg#cardback {
+.moduloCheckout .card-section .container-flip svg#cardfront, .moduloCheckout .card-section .container-flip svg#cardback {
   -webkit-box-shadow: 1px 5px 6px 0px #00000059;
           box-shadow: 1px 5px 6px 0px #00000059;
 }
 
-.moduloCheckout .form-section .container-flip .creditcard .cardBackground {
+.moduloCheckout .card-section .container-flip .creditcard .cardBackground {
   border: 1px solid #fff;
 }
 
-.moduloCheckout .form-section .container-flip .creditcard .grey {
+.moduloCheckout .card-section .container-flip .creditcard .grey {
   fill: #616161;
 }
 
 @media only screen and (min-width: 1000px) {
-  .moduloCheckout .form-section .form-cont {
+  .moduloCheckout .card-section .form-cont {
     width: 50%;
   }
 }
 
-.moduloCheckout .form-section .form-cont-btn {
+.moduloCheckout .card-section .form-cont-btn {
   padding: 15px 20px;
   width: calc(100% + 20px);
   margin-left: -10px;
@@ -2515,7 +2771,7 @@ section .subtitle {
           justify-content: flex-end;
 }
 
-.moduloCheckout .form-section h3 {
+.moduloCheckout .card-section h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2538,17 +2794,17 @@ section .subtitle {
   border-bottom: 1px solid #e6e6e6;
 }
 
-.moduloCheckout .form-section h3 svg {
+.moduloCheckout .card-section h3 svg {
   margin-right: 15px;
 }
 
-.moduloCheckout .form-section .form-input {
+.moduloCheckout .card-section .form-input {
   width: 100%;
   padding: 0 10px 10px;
   position: relative;
 }
 
-.moduloCheckout .form-section .form-input .ccicon {
+.moduloCheckout .card-section .form-input .ccicon {
   height: 20px;
   bottom: 27px;
   opacity: 0.6;
@@ -2556,12 +2812,12 @@ section .subtitle {
 }
 
 @media only screen and (min-width: 1000px) {
-  .moduloCheckout .form-section .form-input .ccicon {
+  .moduloCheckout .card-section .form-input .ccicon {
     bottom: 34px;
   }
 }
 
-.moduloCheckout .form-section .form-input label {
+.moduloCheckout .card-section .form-input label {
   width: 100%;
   display: block;
   color: #768994;
@@ -2574,7 +2830,7 @@ section .subtitle {
   margin-bottom: 13px;
 }
 
-.moduloCheckout .form-section .form-input input {
+.moduloCheckout .card-section .form-input input {
   width: 100%;
   padding: 15px 20px;
   border: 1px solid #d4d4d4;
@@ -2588,131 +2844,131 @@ section .subtitle {
   margin-bottom: 7px;
 }
 
-.moduloCheckout .form-section .form-input input::-webkit-input-placeholder {
+.moduloCheckout .card-section .form-input input::-webkit-input-placeholder {
   color: #90A4AF;
 }
 
-.moduloCheckout .form-section .form-input input:-ms-input-placeholder {
+.moduloCheckout .card-section .form-input input:-ms-input-placeholder {
   color: #90A4AF;
 }
 
-.moduloCheckout .form-section .form-input input::-ms-input-placeholder {
+.moduloCheckout .card-section .form-input input::-ms-input-placeholder {
   color: #90A4AF;
 }
 
-.moduloCheckout .form-section .form-input input::placeholder {
+.moduloCheckout .card-section .form-input input::placeholder {
   color: #90A4AF;
 }
 
-.moduloCheckout .form-section .form-input input:focus {
+.moduloCheckout .card-section .form-input input:focus {
   -webkit-box-shadow: inset 0px 0px 1px 0.5px #27B89382;
           box-shadow: inset 0px 0px 1px 0.5px #27B89382;
   border: 1px solid #27B89382 !important;
 }
 
-.moduloCheckout .form-section .form-input.form-cep {
+.moduloCheckout .card-section .form-input.form-cep {
   width: 100%;
 }
 
 @media only screen and (min-width: 550px) {
-  .moduloCheckout .form-section .form-input.form-cep {
+  .moduloCheckout .card-section .form-input.form-cep {
     width: 33.3%;
   }
 }
 
-.moduloCheckout .form-section .form-input.form-estado {
+.moduloCheckout .card-section .form-input.form-estado {
   width: calc(50%);
 }
 
 @media only screen and (min-width: 550px) {
-  .moduloCheckout .form-section .form-input.form-estado {
+  .moduloCheckout .card-section .form-input.form-estado {
     width: 33.3%;
   }
 }
 
-.moduloCheckout .form-section .form-input.form-cidade {
+.moduloCheckout .card-section .form-input.form-cidade {
   width: calc(50%);
 }
 
 @media only screen and (min-width: 550px) {
-  .moduloCheckout .form-section .form-input.form-cidade {
+  .moduloCheckout .card-section .form-input.form-cidade {
     width: 33.3%;
   }
 }
 
-.moduloCheckout .form-section .form-input.form-rua {
+.moduloCheckout .card-section .form-input.form-rua {
   width: calc(100%);
 }
 
 @media only screen and (min-width: 550px) {
-  .moduloCheckout .form-section .form-input.form-rua {
+  .moduloCheckout .card-section .form-input.form-rua {
     width: 60%;
   }
 }
 
-.moduloCheckout .form-section .form-input.form-numero {
+.moduloCheckout .card-section .form-input.form-numero {
   width: calc(50%);
 }
 
 @media only screen and (min-width: 550px) {
-  .moduloCheckout .form-section .form-input.form-numero {
+  .moduloCheckout .card-section .form-input.form-numero {
     width: 20%;
   }
 }
 
-.moduloCheckout .form-section .form-input.form-comp {
+.moduloCheckout .card-section .form-input.form-comp {
   width: calc(50%);
 }
 
 @media only screen and (min-width: 550px) {
-  .moduloCheckout .form-section .form-input.form-comp {
+  .moduloCheckout .card-section .form-input.form-comp {
     width: 20%;
   }
 }
 
-.moduloCheckout .form-section .form-input.form-cpf {
+.moduloCheckout .card-section .form-input.form-cpf {
   width: calc(50%);
 }
 
-.moduloCheckout .form-section .form-input.form-celular {
+.moduloCheckout .card-section .form-input.form-celular {
   width: calc(50%);
 }
 
-.moduloCheckout .form-section .form-input.form-email {
+.moduloCheckout .card-section .form-input.form-email {
   width: 100%;
 }
 
 @media only screen and (min-width: 550px) {
-  .moduloCheckout .form-section .form-input.form-email {
+  .moduloCheckout .card-section .form-input.form-email {
     width: 50%;
   }
 }
 
-.moduloCheckout .form-section .form-input.form-nome-cartao {
+.moduloCheckout .card-section .form-input.form-nome-cartao {
   width: calc(100%);
 }
 
 @media only screen and (min-width: 550px) {
-  .moduloCheckout .form-section .form-input.form-nome-cartao {
+  .moduloCheckout .card-section .form-input.form-nome-cartao {
     width: 50%;
   }
 }
 
-.moduloCheckout .form-section .form-input.form-numero-cartao {
+.moduloCheckout .card-section .form-input.form-numero-cartao {
   width: calc(100%);
 }
 
 @media only screen and (min-width: 550px) {
-  .moduloCheckout .form-section .form-input.form-numero-cartao {
+  .moduloCheckout .card-section .form-input.form-numero-cartao {
     width: 50%;
   }
 }
 
-.moduloCheckout .form-section .form-input.form-validade {
+.moduloCheckout .card-section .form-input.form-validade {
   width: calc(50%);
 }
 
-.moduloCheckout .form-section .form-input.form-cvv {
+.moduloCheckout .card-section .form-input.form-cvv {
   width: calc(50%);
 }
 

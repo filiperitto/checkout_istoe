@@ -407,10 +407,17 @@ section {
 
 .bg-page{
     width: 100%;
-    height: 280px;
-    background: url(../img/bg-divider.png) repeat-x;
+    height: 480px;
+    background: url(../imgs/bg-divider.png) repeat;
     background-color: #27b89433;
     border-bottom: 1px solid #27b8947e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //opacity: 0;
+    @include respond-to-min(750){
+        opacity: 1;
+    }
 }
 .main{
     padding-top: 73px;
@@ -418,17 +425,201 @@ section {
 //== Checkout Section ::::
 .moduloCheckout{
     padding: 0;
-    margin-top: -260px;
+    margin-top: 30px;
     margin-bottom: 50px;
     @include respond-to-min(1100){
-        margin-top: -240px;
+        margin-top: 40px;
     }
 
     .wrap{
         max-width: 1100px;
         padding: 5px;
+        display: flex;
+        flex-direction: column-reverse;
+        @include respond-to-min(750){
+            flex-direction: column;
+        }
     }
-    form{
+    .resumo-box{
+        .card-section{
+            .produto-box{
+                width: 100%;
+                display: flex;
+                margin-bottom: 25px;
+                align-items: center;
+                @include respond-to-min(750){
+                    align-items: baseline;
+                    padding: 0 10px;
+                }
+                .thumb-img{
+                    width: 130px;
+                    height: 130px;
+                    background: #ededed;
+                    flex-shrink: 0;
+                    border-radius: 3px;
+                    @include respond-to-min(750){
+                        width: 160px;
+                        height: 160px;
+                    }
+                    img{
+                        width: 100%;
+                    }
+                }
+                .info-box{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0 10px;
+                    @include respond-to-min(750){
+                        flex-direction: row;
+                        padding-left: 20px;
+                        height: 100%;
+                    }
+                    .infos{
+                        .header-infos{
+                            width: 100%;
+                            @include respond-to-min(750){
+                                display: flex;
+                                align-items: baseline;
+                            }
+                            .names-info{
+                                
+                                @include respond-to-min(750){
+                                    margin-right: 15px;
+                                }
+                                h4{
+                                    margin: 0;
+                                    padding: 0;
+                                    font-family: Lato;
+                                    font-style: normal;
+                                    font-weight: bold;
+                                    font-size: 18px;
+                                    line-height: 22px;
+                                    margin-bottom: 2px;
+                                    /* identical to box height */
+                                    
+                                    
+                                    color: #000000;
+                                    
+                                }
+                                h5{
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    letter-spacing: -0.015em;
+                                    
+                                    color: #838485;
+                                    
+                                }
+                            }
+                            .tag{
+                                background: #FCD281;
+                                padding: 3px 10px;
+                                border-radius: 3px;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: center;
+                                letter-spacing: -0.015em;
+                                
+                                color: #000000;
+                                
+                                @include respond-to-min(750){
+                                    margin-right: 15px;
+                                }
+                            }
+                            .avaliacao{
+                                display: flex;
+                                align-items: center;
+                                ul{
+                                    margin: 0;
+                                    padding: 0;
+                                    list-style: none;
+                                    display: flex;
+                                    margin-right: 10px;
+                                    li{
+                                        margin-right: 3px;
+                                        &:last-child{
+                                            margin-right: 0;
+                                        }
+                                    }
+                                }
+                                span{
+                                    margin-top: 3px;
+                                    font-family: Lato;
+                                    font-style: normal;
+                                    font-weight: bold;
+                                    font-size: 13px;
+                                    line-height: 16px;
+                                    /* identical to box height */
+                                    
+                                    letter-spacing: -0.015em;
+                                    
+                                    color: #000000;
+                                }
+                            }
+
+                        }
+                        .cont-intro{
+                            display: none;
+                            p{
+                                font-family: Lato;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 12px;
+                                line-height: 16px;
+                                letter-spacing: -0.015em;
+                                opacity: 1;
+                                padding: 0 10px 0 0;
+                                
+                                color: #000000;
+                            }
+                            @include respond-to-min(750){
+                                display: block;
+                            }
+                        }
+                    }
+                    .prices-box{
+                        display: flex;
+                        align-items: center;
+                        @include respond-to-min(750){
+                            flex-shrink: 0;
+                            align-items: flex-end;
+                        }
+                        .real-price{
+                            margin-right: 5px;
+                            span{
+                                font-style: normal;
+                                font-weight: bold;
+                                font-size: 17px;
+                                line-height: 20px;
+                                letter-spacing: -0.015em;
+                                
+                                color: #000000;
+                            }
+                        }
+                        .desc-price{
+                            span{
+
+                                font-family: Lato;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 15px;
+                                line-height: 18px;
+                                /* identical to box height */
+                                
+                                letter-spacing: -0.015em;
+                                
+                                color: #727272;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     .erro{
         width: 100%;
@@ -446,7 +637,7 @@ section {
         }
 
     }
-    .form-section{
+    .card-section{
         width: calc(100%);
         background: #fff;
         display: flex;
@@ -454,6 +645,7 @@ section {
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
         padding: 0 10px;
         border-radius: 3px;
+        margin-bottom: 30px;
         .form-cont{
             display: flex;
             flex-wrap: wrap;
